@@ -28,32 +28,32 @@ xi. user table = 10000
 
 2. Find the total distinct records by either the foreign key or primary key for each table. If two foreign keys are listed in the table, please specify which foreign key.
 		
-	i.		SELECT COUNT(DISTINCT id)
-			FROM business
-	ii.		SELECT COUNT(DISTINCT business_id)
-			FROM hours
+	i.	SELECT COUNT(DISTINCT id)
+		FROM business
+	ii.	SELECT COUNT(DISTINCT business_id)
+		FROM hours
 	iii.	SELECT COUNT(DISTINCT business_id)
-			FROM category	
-	iv.		SELECT COUNT(DISTINCT business_id)
-			FROM attribute	
-	v.		SELECT COUNT(DISTINCT id),
-				   COUNT(DISTINCT business_id),
-				   COUNT(DISTINCT user_id)
-			FROM review
-	vi.		SELECT COUNT(DISTINCT business_id)
-			FROM checkin
+		FROM category	
+	iv.	SELECT COUNT(DISTINCT business_id)
+		FROM attribute	
+	v.	SELECT COUNT(DISTINCT id),
+		       COUNT(DISTINCT business_id),
+		       COUNT(DISTINCT user_id)
+		FROM review
+	vi.	SELECT COUNT(DISTINCT business_id)
+		FROM checkin
 	vii.	SELECT COUNT(DISTINCT id),
-				   COUNT(DISTINCT business_id)
-			FROM photo
+	               COUNT(DISTINCT business_id)
+		FROM photo
 	viii.	SELECT COUNT(DISTINCT user_id),
-				   COUNT(DISTINCT business_id)
-			FROM tip
-	ix.		SELECT COUNT(DISTINCT id)
-			FROM user
-	x.		SELECT COUNT(DISTINCT user_id)
-			FROM friend
-	xi.		SELECT COUNT(DISTINCT user_id)
-			FROM elite_years
+		       COUNT(DISTINCT business_id)
+		FROM tip
+	ix.	SELECT COUNT(DISTINCT id)
+		FROM user
+	x.	SELECT COUNT(DISTINCT user_id)
+		FROM friend
+	xi.	SELECT COUNT(DISTINCT user_id)
+		FROM elite_years
 		
 		
 i. Business = 10000
@@ -107,8 +107,8 @@ WHERE  id IS NULL
 4. For each table and column listed below, display the smallest (minimum), largest (maximum), and average (mean) value for the following fields:
 
 				SELECT MIN(column_name),
-					     MAX(column_name),
-					     AVG(column_name)
+				       MAX(column_name),
+				       AVG(column_name)
 				FROM table_name
 				
 	i. Table: Review, Column: Stars
@@ -142,7 +142,7 @@ WHERE  id IS NULL
 	SQL code used to arrive at answer:
 		
 		SELECT city, 
-			     SUM(review_count) AS tot_reviews
+		       SUM(review_count) AS tot_reviews
 		FROM business
 		GROUP BY city
 		ORDER BY tot_reviews DESC
@@ -187,7 +187,7 @@ i. Avon
 SQL code used to arrive at answer:
 
 	SELECT stars             AS star_rating, 
-		     SUM(review_count) AS count
+	       SUM(review_count) AS count
 	FROM business
 	WHERE city = 'Avon'
 	GROUP BY stars
@@ -211,7 +211,7 @@ ii. Beachwood
 SQL code used to arrive at answer:
 
 	SELECT stars               AS star_rating, 
-		     SUM(review_count)   AS count
+	       SUM(review_count)   AS count
 	FROM business
 	WHERE city = 'Beachwood'
 	GROUP BY stars
@@ -236,7 +236,7 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 	SQL code used to arrive at answer:
 	
 	SELECT name,
-		     review_count
+	       review_count
 	FROM user
 	ORDER BY review_count DESC
 		
@@ -258,7 +258,7 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 	As can be seen from the results, there is no direct correlation between review count and the number of fans that someone has.
 	
 	SELECT review_count,
-		     fans
+	       fans
 	FROM user
 	ORDER BY review_count DESC
 	
@@ -326,7 +326,7 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 	SQL code used to arrive at answer:
 	
 	SELECT name,
-		     fans
+	       fans
 	FROM user
 	ORDER BY fans DESC
 	LIMIT 10
@@ -373,7 +373,7 @@ iii. Are you able to infer anything from the location data provided between thes
 
 SQL code used for analysis:
 
-		SELECT b.NAME,
+SELECT b.NAME,
        h.hours       AS Sun,
        h1.hours      AS Mon,
        h2.hours      AS Tue,
