@@ -1,4 +1,4 @@
-Profiling and Analyzing the Yelp Dataset Coursera Worksheet
+Profiling and Analyzing the Yelp Dataset - A Coursera Worksheet
 
 This is a 2-part assignment. In the first part, you are asked a series of questions that will help you profile and understand the data just like a data scientist would. For this first part of the assignment, you will be assessed both on the correctness of your findings, as well as the code you used to arrive at your answer. You will be graded on how easy your code is to read, so remember to use proper formatting and comments where necessary.
 
@@ -249,13 +249,13 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 	| Sara      |         1629 |
 	| Yuri      |         1339 |
 
-8. Does posing more reviews correlate with more fans? 
+8. Does posting more reviews correlate with more fans? 
 	
 	No, posting more reviews does not correlate with more fans.
 
-	Please explain your findings and interpretation of the results: 
+   Please explain your findings and interpretation of the results: 
 	
-	As can be seen from the results, there is no direct correlation between review count and the number of fans that someone has.
+	As can be seen from the results below, there is no direct correlation between review count and the number of fans that someone has.
 	
 	SELECT review_count,
 	       fans
@@ -505,9 +505,9 @@ ORDER  BY a.NAME,
 Further in-depth analysis
 
 -----
-SELECT b.NAME,
-       a.NAME,
-       a.value,
+SELECT b.NAME,      -- business name
+       a.NAME,      -- attribute name - restaurant delivery
+       a.value,     -- does the attribute apply to said business
        b.stars,
        b.review_count
 FROM   business b
@@ -547,15 +547,17 @@ ORDER  BY value,
 | Thirsty Goat                           | RestaurantsDelivery | 0     |   3.5 |           74 |
 | Wingstop                               | RestaurantsDelivery | 0     |   3.0 |          123 |
 | Mango Flats                            | RestaurantsDelivery | 1     |   2.5 |            5 |
-| The Cider Mill                		     | RestaurantsDelivery | 1     |   4.0 |           91 |
-| Pizzaiolo                         		 | RestaurantsDelivery | 1     |   3.0 |           34 |
-| Papa Da Vinci                     		 | RestaurantsDelivery | 1     |   2.5 |           28 |
-| Otto Onkel                    		     | RestaurantsDelivery | 1     |   3.0 |           50 |	
+| The Cider Mill                         | RestaurantsDelivery | 1     |   4.0 |           91 |
+| Pizzaiolo                         	 | RestaurantsDelivery | 1     |   3.0 |           34 |
+| Papa Da Vinci                     	 | RestaurantsDelivery | 1     |   2.5 |           28 |
+| Otto Onkel                    	 | RestaurantsDelivery | 1     |   3.0 |           50 |	
+
+
 ---------
 
-SELECT b.NAME,
-       a.NAME,
-       a.value,
+SELECT b.NAME,     -- business name
+       a.NAME,     -- attribute name - business accepts credit cards
+       a.value,    -- does the attribute apply to said business
        b.stars,
        b.review_count
 FROM   business b
